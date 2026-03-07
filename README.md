@@ -167,8 +167,9 @@ python workflow.py
 ניתן לצפות בתרשימי הזרימה האינטראקטיביים בקבצים הבאים:
 
 צפייה בתרשים Workflow מלא (HTML)
-
+workflow_all_flows.html
 צפייה במפת זרימת אירועים (HTML)
+workflow_map.html
 
 🔧 פתרון בעיות נפוצות
 ❌ "SSL Certificate Error"
@@ -179,7 +180,6 @@ python workflow.py
 פתרון: אין צורך בפעולה ידנית - המערכת תבצע Fallback אוטומטי לאחסון מקומי.
 
 👥 קרדיטים
-פותח: [שמך]
 
 קורס: RAG & Agentic Coding
 
