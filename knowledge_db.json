@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-03-02T01:17:38.773363",
+  "sources": [
+    {
+      "tool": "docs_ai",
+      "root_path": "./docs_ai",
+      "files": [
+        {
+          "path": "C:\\Users\\user1\\Desktop\\my_target_project\\docs_ai\\‏‏architecture.md",
+          "last_modified": "2026-03-02T01:17:39.218393",
+          "hash": "sha256:e99e1f143a40ddb3"
+        },
+        {
+          "path": "C:\\Users\\user1\\Desktop\\my_target_project\\docs_ai\\‏‏ui_rules.md",
+          "last_modified": "2026-03-02T01:17:39.536507",
+          "hash": "sha256:d4106434ed465fb2"
+        }
+      ]
+    }
+  ],
+  "items": {
+    "decisions": [],
+    "rules": [],
+    "warnings": [],
+    "dependencies": []
+  }
+}
