@@ -4,17 +4,19 @@
 ![Pinecone](https://img.shields.io/badge/Pinecone-Serverless-3B82F6)
 ![Cohere](https://img.shields.io/badge/Cohere-embed--v3.0-111827)
 
-## 📌 Overview
-**Problem**: תיעוד Agentic מפוזר ורב‑מקורות מקשה על Context‑aware Querying מדויק בסביבות Enterprise.  
-**Solution**: פלטפורמת **Enterprise‑grade RAG** המשלבת **Semantic Retrieval** ו‑**Event‑Driven Orchestration** כדי לספק תשובות עקביות ומהירות גם תחת מגבלות רשת.
+## ✨ Executive Summary
+מערכת **Enterprise‑grade RAG** לניהול תיעוד Agentic והנגשת ידע צוותי בזמן אמת. הפלטפורמה משלבת **Semantic Retrieval** עם **Event‑Driven Orchestration** כדי לייצר תשובות מדויקות, עקביות ועמידות תחת מגבלות רשת—בדיוק מה שנדרש במערכות Production.
 
-## ✨ Key Features
-- 🧠 **Semantic Retrieval** עם Vector Embeddings רב‑לשוניים לשיפור Precision/Recall.
-- 🧭 **Smart Routing** בין Structured Extraction לבין Vector Search לפי סוג Query.
-- ⚙️ **Event‑Driven Orchestration** עם State Machine ו‑Validation בכל שלב.
-- 🏗️ **Production‑ready Architecture** מותאמת ל‑Scalability ו‑Asynchronous Workflows.
+## 🎯 Why This Matters
+תיעוד מפוזר בין כלים ומקורות יוצר פער תפעולי בין ידע לבין פעולה. המערכת הזו משמשת כ‑**Central Intelligence** למפתחים: שכבת חיפוש חכמה שמבינה הקשר, מזהה תלות בין רכיבים, ומחזירה תשובות ישימות במהירות.
 
-## 🧭 Architecture
+## 🧠 Core Capabilities
+- **Semantic Retrieval** עם Embeddings רב‑לשוניים לשיפור Precision/Recall.
+- **Smart Routing** בין Structured Extraction לבין Vector Search לפי סוג Query.
+- **Event‑Driven Orchestration** עם State Machine, ולידציות ו‑Routing דינמי.
+- **Production‑ready Architecture** מוכנה ל‑Scalability ול‑Asynchronous Workflows.
+
+## 🧭 Architecture (Event‑Driven Workflow)
 ```mermaid
 flowchart LR
     A[Start] --> B[Validate]
@@ -33,10 +35,10 @@ flowchart LR
 | Validation | Pydantic v2 | Structured Output | Contract safety |
 | SSL Handling | pip‑system‑certs | NetFree Compatibility | Adaptive Connectivity |
 
-## 🛡️ Engineering Resilience
-- **Network Resilience** עם `pip-system-certs` לתאימות Enterprise CAs ו‑NetFree.
-- **SSL Handling** ברמת Runtime ללא התאמות ידניות.
-- **High‑Availability (HA) Fallback** ל‑Local Vector Store במקרה של Network Constraints (למשל 418).
+## 🛡️ Engineering Resilience (NetFree/SSL/Fallback)
+- **Network Resilience** עם `pip-system-certs` לתאימות Enterprise CAs ו‑NetFree ללא התאמות ידניות.
+- **SSL Handling** ברמת Runtime כיכולת מערכתית.
+- **High‑Availability (HA) Fallback** ל‑Local Vector Store כאשר יש Network Constraints (למשל 418) לשמירת Continuity.
 
 ## 📦 Installation & Quick Run
 ```bash
