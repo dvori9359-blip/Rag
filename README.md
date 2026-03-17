@@ -1,188 +1,60 @@
-# 🔍 Agentic Docs RAG Explorer
+# 🚀 Agentic Docs RAG Explorer
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![LlamaIndex](https://img.shields.io/badge/LlamaIndex-Latest-6B46C1)
+![Pinecone](https://img.shields.io/badge/Pinecone-Serverless-3B82F6)
+![Cohere](https://img.shields.io/badge/Cohere-embed--v3.0-111827)
 
-יישום RAG (Retrieval-Augmented Generation) מתקדם לניהול ותשאול תיעוד של כלי Agentic Coding, הכולל תמיכה מובנית בסביבות רשת מסוננות (NetFree).
+## 📌 Overview
+**Problem**: תיעוד Agentic מפוזר ורב‑מקורות מקשה על Context‑aware Querying מדויק בסביבות Enterprise.  
+**Solution**: פלטפורמת **Enterprise‑grade RAG** המשלבת **Semantic Retrieval** ו‑**Event‑Driven Orchestration** כדי לספק תשובות עקביות ומהירות גם תחת מגבלות רשת.
 
-## 📌 תיאור הפרויקט
+## ✨ Key Features
+- 🧠 **Semantic Retrieval** עם Vector Embeddings רב‑לשוניים לשיפור Precision/Recall.
+- 🧭 **Smart Routing** בין Structured Extraction לבין Vector Search לפי סוג Query.
+- ⚙️ **Event‑Driven Orchestration** עם State Machine ו‑Validation בכל שלב.
+- 🏗️ **Production‑ready Architecture** מותאמת ל‑Scalability ו‑Asynchronous Workflows.
 
-המערכת מנהלת ומאפשרת לתשאל את קבצי ה-Markdown של כלי קידוד אוטונומיים (Agentic Coding Tools) כמו:
-- **Cursor** - כלי AI לעריכת קוד
-- **Claude Code** - עוזר קידוד מבוסס Claude
-- **Windsurf** - סביבת פיתוח חכמה
-- **Kiro** - AI agent לתכנות
+## 🧭 Architecture
+```mermaid
+flowchart LR
+    A[Start] --> B[Validate]
+    B --> C[Retrieve]
+    C --> D[Synthesize]
+    D --> E[Stop]
+```
 
-הפרויקט מורכב מ-3 שלבים עם 3 קבצים מרכזיים:
+## 🧰 Tech Stack
+| Category | Technology | Role | Notes |
+|---------|------------|------|------|
+| Orchestration | LlamaIndex | RAG Orchestration & Indexing | Agentic‑ready pipeline |
+| LLM / Embeddings | Cohere (embed‑v3.0) | Multilingual Semantic Space | Context‑aware retrieval |
+| Vector DB | Pinecone (Serverless) | Scalable Vector Retrieval | Production‑grade |
+| HA Fallback Store | SimpleVectorStore | Local Persistence | High‑Availability |
+| Validation | Pydantic v2 | Structured Output | Contract safety |
+| SSL Handling | pip‑system‑certs | NetFree Compatibility | Adaptive Connectivity |
 
-### 🎯 שלב א' - MVP ([main.py](main.py))
-חיפוש סמנטי בסיסי עם Embeddings וקטוריים - מאפשר לשאול שאלות כלליות ולקבל תשובות המבוססות על הקשר סמנטי.
+## 🛡️ Engineering Resilience
+- **Network Resilience** עם `pip-system-certs` לתאימות Enterprise CAs ו‑NetFree.
+- **SSL Handling** ברמת Runtime ללא התאמות ידניות.
+- **High‑Availability (HA) Fallback** ל‑Local Vector Store במקרה של Network Constraints (למשל 418).
 
-### 🎯 שלב ב' - Event-Driven Workflow ([workflow.py](workflow.py))
-ארכיטקטורה מבוססת אירועים עם ולידציות, ניתובים חכמים, וניהול state - מערכת מתקדמת שמטפלת בזרימה מדורגת.
-
-### 🎯 שלב ג' - Data Extraction + Router ([extractor.py](extractor.py))
-חילוץ נתונים מובנה מקבצי ה-md + Router אוטומטי שמחליט בין חיפוש סמנטי לשליפה מובנית.
-
----
-
-## 🛠️ טכנולוגיות
-
-| טכנולוגיה | תפקיד | גרסה |
-|-----------|-------|------|
-| **LlamaIndex** | Framework ל-RAG | Latest |
-| **Cohere** | Embeddings + LLM (multilingual) | embed-v3.0 |
-| **Pinecone** | Vector Database | Serverless |
-| **Gradio** | ממשק משתמש אינטראקטיבי | Latest |
-| **pip-system-certs** | תמיכה בתעודות SSL (NetFree) | Latest |
-| **Pydantic** | Validation & Structured Output | v2 |
-| **Python** | שפת הפיתוח | 3.10+ |
-
----
-
-## 🌐 תמיכה בסביבת נטפרי (NetFree Support)
-הפרויקט כולל פתרונות ייחודיים לעבודה בסביבה מסוננת:
-- **SSL Verification**: שימוש ב-`pip-system-certs` המאפשר לפייתון להכיר בתעודות האבטחה של נטפרי.
-- **Hybrid Storage Fallback**: המערכת מזהה אוטומטית חסימות רשת (כמו שגיאה 418) ועוברת לשימוש ב-`SimpleVectorStore` מקומי לשמירה על רציפות העבודה.
-
----
-
-## 📦 התקנה
-
-### דרישות מקדימות
-- Python 3.10 ומעלה
-- חשבון Cohere וחשבון Pinecone (Free Tiers)
-
-### שלבי ההתקנה
-
+## 📦 Installation & Quick Run
 ```bash
-# 1. שכפול/הורדת הפרויקט
-cd Rag
-
-# 2. יצירת סביבה וירטואלית (מומלץ)
 python -m venv venv
 # Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate
 
-# 3. התקנת כל החבילות הנדרשות (כולל תמיכת SSL לנטפרי)
-pip install llama-index-core llama-index-embeddings-cohere llama-index-llms-cohere llama-index-vector-stores-pinecone pinecone-client gradio python-dotenv pydantic pip-system-certs
+pip install llama-index-core llama-index-embeddings-cohere llama-index-llms-cohere \
+  llama-index-vector-stores-pinecone pinecone-client python-dotenv pydantic pip-system-certs
 
-# 4. הגדרת קובץ .env
-cp .env.example .env
-Gemini נטפרי
-‫Gem בהתאמה אישית
-Gemini נטפרי אמר
-הבנתי בדיוק. את רוצה שהקובץ המאוחד יהיה מבוסס על המבנה המפורט ששלחת, אבל שיכלול בתוכו את התיקונים הטכניים שעשינו (נטפרי, SSL ו-Fallback) כדי שהפרויקט יהיה מושלם להגשה.
+copy .env.example .env   # Windows
+# cp .env.example .env    # Mac/Linux
 
-הנה הקובץ המלא והסופי. את יכולה להעתיק את כל התוכן מהבלוק למטה ולהדביק אותו ב-README.md:
-
-Markdown
-# 🔍 Agentic Docs RAG Explorer
-
-יישום RAG (Retrieval-Augmented Generation) מתקדם לניהול ותשאול תיעוד של כלי Agentic Coding, הכולל תמיכה מובנית בסביבות רשת מסוננות (NetFree).
-
-## 📌 תיאור הפרויקט
-
-המערכת מנהלת ומאפשרת לתשאל את קבצי ה-Markdown של כלי קידוד אוטונומיים (Agentic Coding Tools) כמו:
-- **Cursor** - כלי AI לעריכת קוד
-- **Claude Code** - עוזר קידוד מבוסס Claude
-- **Windsurf** - סביבת פיתוח חכמה
-- **Kiro** - AI agent לתכנות
-
-הפרויקט מורכב מ-3 שלבים עם 3 קבצים מרכזיים:
-
-### 🎯 שלב א' - MVP ([main.py](main.py))
-חיפוש סמנטי בסיסי עם Embeddings וקטוריים - מאפשר לשאול שאלות כלליות ולקבל תשובות המבוססות על הקשר סמנטי.
-
-### 🎯 שלב ב' - Event-Driven Workflow ([workflow.py](workflow.py))
-ארכיטקטורה מבוססת אירועים עם ולידציות, ניתובים חכמים, וניהול state - מערכת מתקדמת שמטפלת בזרימה מדורגת.
-
-### 🎯 שלב ג' - Data Extraction + Router ([extractor.py](extractor.py))
-חילוץ נתונים מובנה מקבצי ה-md + Router אוטומטי שמחליט בין חיפוש סמנטי לשליפה מובנית.
-
----
-
-## 🛠️ טכנולוגיות
-
-| טכנולוגיה | תפקיד | גרסה |
-|-----------|-------|------|
-| **LlamaIndex** | Framework ל-RAG | Latest |
-| **Cohere** | Embeddings + LLM (multilingual) | embed-v3.0 |
-| **Pinecone** | Vector Database | Serverless |
-| **Gradio** | ממשק משתמש אינטראקטיבי | Latest |
-| **pip-system-certs** | תמיכה בתעודות SSL (NetFree) | Latest |
-| **Pydantic** | Validation & Structured Output | v2 |
-| **Python** | שפת הפיתוח | 3.10+ |
-
----
-
-## 🌐 תמיכה בסביבת נטפרי (NetFree Support)
-הפרויקט כולל פתרונות ייחודיים לעבודה בסביבה מסוננת:
-- **SSL Verification**: שימוש ב-`pip-system-certs` המאפשר לפייתון להכיר בתעודות האבטחה של נטפרי.
-- **Hybrid Storage Fallback**: המערכת מזהה אוטומטית חסימות רשת (כמו שגיאה 418) ועוברת לשימוש ב-`SimpleVectorStore` מקומי לשמירה על רציפות העבודה.
-
----
-
-## 📦 התקנה
-
-### דרישות מקדימות
-- Python 3.10 ומעלה
-- חשבון Cohere וחשבון Pinecone (Free Tiers)
-
-### שלבי ההתקנה
-
-```bash
-# 1. שכפול/הורדת הפרויקט
-cd Rag
-
-# 2. יצירת סביבה וירטואלית (מומלץ)
-python -m venv venv
-# Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate
-
-# 3. התקנת כל החבילות הנדרשות (כולל תמיכת SSL לנטפרי)
-pip install llama-index-core llama-index-embeddings-cohere llama-index-llms-cohere llama-index-vector-stores-pinecone pinecone-client gradio python-dotenv pydantic pip-system-certs
-
-# 4. הגדרת קובץ .env
-cp .env.example .env
-🔑 הגדרת מפתחות API
-ערוך את הקובץ .env והוסף את המפתחות שלך:
-
-קטע קוד
-COHERE_API_KEY=your_cohere_api_key_here
-PINECONE_API_KEY=your_pinecone_api_key_here
-⚠️ חשוב: אל תשתף את קובץ ה-.env! הוא כבר מוגדר ב-.gitignore.
-
-🚀 שימוש והרצה
-🎯 שלב א' - MVP (חיפוש סמנטי בסיסי)
-Bash
 python main.py
-ממשק Gradio יפתח ב: http://127.0.0.1:7860
-
-🎯 שלב ב' - Event-Driven Workflow
-Bash
 python workflow.py
-זרימת העבודה: StartEvent -> [validate_input] -> QueryEvent -> [retrieve] -> ResultsEvent -> [synthesize] -> StopEvent.
+python extractor.py --rebuild
+python extractor.py
+```
 
-🎯 שלב ג' - Data Extraction + Router
-בניית המאגר (פעם ראשונה): python extractor.py --rebuild
-הרצה רגילה: python extractor.py
-
-📊 ארכיטקטורה ותרשימי זרימה
-ניתן לצפות בתרשימי הזרימה האינטראקטיביים בקבצים הבאים:
-
-צפייה בתרשים Workflow מלא (HTML)
-workflow_all_flows.html
-צפייה במפת זרימת אירועים (HTML)
-workflow_map.html
-
-🔧 פתרון בעיות נפוצות
-❌ "SSL Certificate Error"
-פתרון: המערכת משתמשת ב-pip-system-certs. ודא שהרצת את פקודת ההתקנה של החבילה בטרמינל.
-
-❌ "Pinecone Error 418"
-בעיה: חסימה של נטפרי על כתובת ה-API של האינדקס.
-פתרון: אין צורך בפעולה ידנית - המערכת תבצע Fallback אוטומטי לאחסון מקומי.
-
-👥 קרדיטים
-
-קורס: RAG & Agentic Coding
-
-תאריך: מרץ 2026
-
-🎉 בהצלחה בשימוש במערכת!
+## 🧾 Credits
+Course: RAG & Agentic Coding  
+Date: March 2026
